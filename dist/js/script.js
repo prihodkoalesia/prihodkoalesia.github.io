@@ -1,7 +1,14 @@
 (function ($) {
     $(document).ready(function () {
+        //добавлять класс, когда элемент находится в поле видимости
         inWindow('.elem_anim');
+        //показывать меню при скролле
         ShowMenu();
+        //навигация по лендингу
+        LandingInit();
+        //клик по стрелке вниз
+        ToDown();
+
         $(window).scroll(function(){
             inWindow('.elem_anim');
             ShowMenu();
@@ -31,6 +38,20 @@
                 $('header').stop().animate({top: "-70px"}, 500);
                 // $('#scrollTop').stop().animate({bottom: "-60px"}, 500);
             };
+    }
+
+    function LandingInit() {
+        $("a[rel='m_PageScroll2id']").mPageScroll2id({
+            highlightSelector:"#navigation-menu a[rel='m_PageScroll2id']",
+            liveSelector:"#navigation-menu a[rel='m_PageScroll2id']",
+            offset:65
+        });
+    }
+    
+    function ToDown() {
+        $('.arrow-to-down').click(function () {
+            $('a[href="#skills"]').click();
+        })
     }
 
 
