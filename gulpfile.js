@@ -14,7 +14,7 @@ var config = {
         pages: "pages/"
     },
     dest: {
-        main: "dist/",
+        main: "",
         js: "js/",
         css: "css/",
         pages: "pages/"
@@ -45,16 +45,16 @@ gulp.task('rigger', function() {
         .pipe(gulp.dest(config.dest.main + config.dest.pages));
 
     gulp.src("app/img/*.*")
-        .pipe(gulp.dest("dist/img"));
+        .pipe(gulp.dest(config.dest.main +"img/"));
 
     gulp.src("app/font/**/*.*")
-        .pipe(gulp.dest("dist/font"));
+        .pipe(gulp.dest(config.dest.main+"font/"));
 
     gulp.src("app/icon/**/*.*")
-        .pipe(gulp.dest("dist/icon"));
+        .pipe(gulp.dest(config.dest.main+"icon/"));
 
     gulp.src("app/*.ico")
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest(config.dest.main));
 
 });
 
@@ -105,11 +105,16 @@ gulp.task('reload', ['rigger'], function () {
 // задача clean - чистим dist
 gulp.task('clean', function () {
     console.log("Чистим папку");
-    del.sync(config.dest.main + "**/*");
+    // del.sync(config.dest.main + "**/*");
+    del.sync(config.dest.main + config.dest.js);
+    del.sync(config.src.main + config.src.css + '/**/*.css');
+    del.sync(config.dest.main +"img/");
+    del.sync(config.dest.main+"icon/");
+    del.sync(config.dest.main+"font/");
 });
 
 // в случае изменения сущестующих или появления новых файлов - выполняем задачи js(вывод в консоль сообщения) и reload - перезапуск browser-sync
-gulp.task('watch', ['clean', 'browser-sync', 'sass', 'rigger', 'scripts', 'styles'], function () {
+gulp.task('watch', [/*'clean',*/ 'browser-sync', 'sass', 'rigger', 'scripts', 'styles'], function () {
     gulp.watch(config.src.main + config.src.js + '**/*.js', ['reload']);
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch(config.src.main + config.src.css + '**/*.css', ['reload']);
