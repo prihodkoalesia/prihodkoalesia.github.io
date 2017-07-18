@@ -50,6 +50,12 @@ gulp.task('rigger', function() {
     gulp.src("app/font/**/*.*")
         .pipe(gulp.dest("dist/font"));
 
+    gulp.src("app/icon/**/*.*")
+        .pipe(gulp.dest("dist/icon"));
+
+    gulp.src("app/*.ico")
+        .pipe(gulp.dest("dist"));
+
 });
 
 gulp.task('sass', function () { // Создаем таск "sass"
