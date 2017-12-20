@@ -1,0 +1,11 @@
+@media all and (max-width: 1350px) {
+  .banner {
+    height: 450px; }
+  .codingDesktop div, div.line4 p {
+    font-size: 14px; } }
+
+@media all and (max-width: 650px) {
+  header nav ul li {
+    padding: 5px 8px; }
+  header .logo h1 {
+    font-size: 30px; } }

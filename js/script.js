@@ -22,7 +22,7 @@
         currentEls.each(function(){
             var el = $(this);
             var offset = el.offset();
-            if(scrollTop <= offset.top && (el.height() + offset.top) < (scrollTop + windowHeight)){
+            if(scrollTop <= offset.top && (el.height()/2 + offset.top) < (scrollTop + windowHeight)){
                 $(this).addClass('go')
             }
         });
@@ -32,10 +32,12 @@
 
             var $scroll = $(window).scrollTop();
             if($scroll > 100){
-                $('header').stop().animate({top: "0px"}, 500);
+                $('header').addClass('stick');
+                // $('header').stop().animate({top: "0px"}, 500);
                 // $('#scrollTop').stop().animate({bottom: "20px"}, 500);
             }else {
-                $('header').stop().animate({top: "-70px"}, 500);
+                $('header').removeClass('stick');
+                // $('header').stop().animate({top: "-70px"}, 500);
                 // $('#scrollTop').stop().animate({bottom: "-60px"}, 500);
             };
     }

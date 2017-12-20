@@ -114,7 +114,7 @@ gulp.task('clean', function () {
 });
 
 // в случае изменения сущестующих или появления новых файлов - выполняем задачи js(вывод в консоль сообщения) и reload - перезапуск browser-sync
-gulp.task('watch', [/*'clean',*/ 'browser-sync', 'sass', 'rigger', 'scripts', 'styles'], function () {
+gulp.task('watch', ['browser-sync', 'sass', 'rigger', 'scripts', 'styles'], function () {
     gulp.watch(config.src.main + config.src.js + '**/*.js', ['reload']);
     gulp.watch('app/scss/**/*.scss', ['sass']);
     gulp.watch(config.src.main + config.src.css + '**/*.css', ['reload']);
