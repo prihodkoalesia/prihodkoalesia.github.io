@@ -4,8 +4,107 @@
   .codingDesktop div, div.line4 p {
     font-size: 14px; } }
 
+@media all and (max-width: 991px) {
+  .contact__title a {
+    font-size: 16px; }
+  .contacts figure {
+    width: 90px;
+    height: 90px; } }
+
 @media all and (max-width: 650px) {
   header nav ul li {
     padding: 5px 8px; }
   header .logo h1 {
-    font-size: 30px; } }
+    font-size: 30px; }
+  .skill .skill__level {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 20px; }
+  .skill__title {
+    clear: both;
+    margin-top: 15px; }
+  .skill {
+    padding: 20px 0 10px; }
+  .skill__title {
+    font-size: 28px; } }
+
+@media all and (max-width: 570px) {
+  .open_menu .menu-close {
+    display: block; }
+  .open_menu header nav {
+    top: 0; }
+  .menu-button, .menu-close {
+    display: block; }
+  .menu-button {
+    margin-right: 20px;
+    padding-top: 7px; }
+  .menu-close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    display: none; }
+    .menu-close i {
+      font-size: 25px;
+      color: #bababa; }
+  header nav {
+    display: block;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    header nav a {
+      font-size: 25px; }
+    header nav ul {
+      padding: 0;
+      text-align: center; }
+      header nav ul li {
+        width: 100%;
+        display: block;
+        padding: 20px 0; }
+  header .logo {
+    width: auto; }
+  header {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; } }
+
+@media all and (max-width: 416px) {
+  .codingDesktop {
+    width: 210px; }
+  div.line4 span {
+    height: 18px; } }
+
+@media all and (max-width: 400px) {
+  .contact {
+    width: 100%; }
+    .contact > div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      padding-bottom: 10px; }
+  .contacts figure {
+    margin: 0;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px; }
+  .contacts figure i {
+    font-size: 22px; } }

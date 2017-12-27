@@ -8,6 +8,8 @@
         LandingInit();
         //клик по стрелке вниз
         ToDown();
+        //мобильное меню
+        MobileMenu();
 
         $(window).scroll(function(){
             inWindow('.elem_anim');
@@ -54,6 +56,20 @@
         $('.arrow-to-down').click(function () {
             $('a[href="#skills"]').click();
         })
+    }
+
+    function MobileMenu() {
+        $('.menu-button').click(function () {
+            $('body').addClass('open_menu');
+            // $('#navigation-menu').slideDown();
+        });
+        $('.menu-close').click(function () {
+            $('body').removeClass('open_menu');
+            // $('#navigation-menu').slideUp();
+        });
+        $('header nav a').click(function () {
+            $('body').removeClass('open_menu');
+        });
     }
 
 
