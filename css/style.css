@@ -512,17 +512,31 @@ div.line4 span {
     filter: url(../img/blur.svg#blur);
     -webkit-filter: blur(1px);
     filter: blur(1px);
-    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1'); }
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+    position: absolute;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translate(-50%, 0%) scale(1.05);
+        -ms-transform: translate(-50%, 0%) scale(1.05);
+            transform: translate(-50%, 0%) scale(1.05);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
   .project:hover .project_descr {
-    opacity: 1; }
+    opacity: 1;
+    left: 0;
+    top: 0; }
   .project:hover img {
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='0.1');
     -webkit-filter: blur(0.1px);
-    filter: blur(0.1px); }
+    filter: blur(0.1px);
+    -webkit-transform: translate(-50%, 0%) scale(1);
+        -ms-transform: translate(-50%, 0%) scale(1);
+            transform: translate(-50%, 0%) scale(1); }
   .project_descr {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 100%;
+    left: 0%;
     width: 100%;
     height: 100%;
     text-align: center;
